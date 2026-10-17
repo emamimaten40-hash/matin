@@ -1,0 +1,112 @@
+
+Welcome to Gradle 9.3.1!
+
+Here are the highlights of this release:
+ - Test reporting improvements
+ - Error and warning improvements
+ - Build authoring improvements
+
+For more details see https://docs.gradle.org/9.3.1/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+Calculating task graph as no cached configuration is available for tasks: :app:assembleDebug
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateDebugResources
+
+> Task :app:processDebugGoogleServices
+File google-services.json is missing.
+The Google Services Plugin cannot function without it.
+Searched locations: /home/runner/work/matin/matin/app/src/debug/google-services.json, /home/runner/work/matin/matin/app/src/debug/google-services.json, /home/runner/work/matin/matin/app/src/google-services.json, /home/runner/work/matin/matin/app/src/debug/google-services.json, /home/runner/work/matin/matin/app/src/Debug/google-services.json, /home/runner/work/matin/matin/app/google-services.json
+
+> Task :app:generateDebugBuildConfig
+> Task :app:packageDebugResources
+> Task :app:processDebugNavigationResources
+> Task :app:mergeDebugAssets
+> Task :app:compressDebugAssets
+> Task :app:javaPreCompileDebug
+> Task :app:desugarDebugFileDependencies
+> Task :app:parseDebugLocalResources
+> Task :app:generateDebugRFile
+> Task :app:mapDebugSourceSetPaths
+> Task :app:checkDebugAarMetadata
+> Task :app:compileDebugNavigationResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:checkDebugDuplicateClasses
+Exception in thread "AWT-EventQueue-0" java.lang.NullPointerException: Cannot invoke "ksp.com.intellij.openapi.application.Application.getService(java.lang.Class)" because the return value of "ksp.com.intellij.openapi.application.ApplicationManager.getApplication()" is null
+	at ksp.com.intellij.openapi.fileEditor.FileDocumentManager.getInstance(FileDocumentManager.java:35)
+	at ksp.com.intellij.openapi.fileTypes.BinaryFileTypeDecompilers.lambda$notifyDecompilerSetChange$1(BinaryFileTypeDecompilers.java:29)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:773)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+> Task :app:kspDebugKotlin
+> Task :app:mergeDebugResources
+> Task :app:processDebugMainManifest
+> Task :app:mergeExtDexDebug
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :app:compileDebugKotlin
+> Task :app:mergeLibDexDebug
+> Task :app:processDebugResources
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:mergeDebugJniLibFolders
+> Task :app:mergeDebugNativeLibs
+
+> Task :app:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so, libdatastore_shared_counter.so. Run with --info option to learn more.
+
+> Task :app:compileDebugKotlin
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/data/GoldPriceRepository.kt:140:55 'constructor(p0: String!): Locale' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/data/GoldPriceRepository.kt:199:55 'constructor(p0: String!): Locale' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/data/GoldPriceRepository.kt:201:54 'constructor(p0: String!): Locale' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/data/GoldPriceRepository.kt:203:59 'constructor(p0: String!): Locale' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/localization/Localization.kt:92:27 'constructor(p0: String!): Locale' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/components/LogoMotionSplash.kt:317:61 'val Icons.Filled.Chat: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Chat.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/navigation/GoldLuxApp.kt:85:37 'val Icons.Filled.ShowChart: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.ShowChart.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/navigation/GoldLuxApp.kt:86:41 'val Icons.Outlined.ShowChart: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ShowChart.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/navigation/GoldLuxApp.kt:95:37 'val Icons.Filled.Chat: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Chat.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/navigation/GoldLuxApp.kt:96:41 'val Icons.Outlined.Chat: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.Chat.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/AdminPanelScreen.kt:253:46 'val Icons.Filled.ReceiptLong: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.ReceiptLong.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/AdminPanelScreen.kt:769:53 'val Icons.Filled.ReceiptLong: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.ReceiptLong.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/AdminPanelScreen.kt:812:73 'constructor(p0: String!): Locale' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/AdminPanelScreen.kt:961:53 'val Icons.Filled.ShowChart: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.ShowChart.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/PriceHomeScreen.kt:462:83 'constructor(p0: String!): Locale' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/ProductDetailScreen.kt:214:61 'val Icons.Filled.Chat: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Chat.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/ProfileScreen.kt:266:49 'val Icons.Filled.ReceiptLong: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.ReceiptLong.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/ProfileScreen.kt:701:53 'val Icons.Filled.ShowChart: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.ShowChart.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/ProfileScreen.kt:906:67 'constructor(p0: String!): Locale' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/ProfileScreen.kt:931:57 'val Icons.Filled.ReceiptLong: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.ReceiptLong.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/ProfileScreen.kt:1055:57 'val Icons.Filled.Chat: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Chat.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/ShopScreen.kt:459:57 'val Icons.Filled.Chat: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Chat.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/WhatsAppHubScreen.kt:139:53 'val Icons.Filled.Chat: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Chat.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/WhatsAppHubScreen.kt:203:61 'val Icons.Filled.Chat: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Chat.
+w: file:///home/runner/work/matin/matin/app/src/main/java/com/example/goldlux/ui/screens/WhatsAppHubScreen.kt:417:45 'val Icons.Filled.Chat: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Filled.Chat.
+
+> Task :app:processDebugJavaRes
+> Task :app:mergeDebugJavaResource
+> Task :app:compileDebugJavaWithJavac
+> Task :app:dexBuilderDebug
+> Task :app:mergeProjectDexDebug
+> Task :app:packageDebug
+> Task :app:assembleDebug
+> Task :app:createDebugApkListingFileRedirect
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1792242580650.json
+
+BUILD SUCCESSFUL in 3m 41s
+39 actionable tasks: 39 executed
+Configuration cache entry stored.

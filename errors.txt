@@ -1,0 +1,45 @@
+13:> Task :app:generateDebugAssets UP-TO-DATE
+14:> Task :app:preBuild UP-TO-DATE
+15:> Task :app:preDebugBuild UP-TO-DATE
+16:> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+17:> Task :app:generateDebugResources
+19:> Task :app:processDebugGoogleServices
+24:> Task :app:generateDebugBuildConfig
+25:> Task :app:packageDebugResources
+26:> Task :app:processDebugNavigationResources
+27:> Task :app:mergeDebugAssets
+28:> Task :app:compressDebugAssets
+29:> Task :app:javaPreCompileDebug
+30:> Task :app:desugarDebugFileDependencies
+31:> Task :app:parseDebugLocalResources
+32:> Task :app:generateDebugRFile
+33:> Task :app:mapDebugSourceSetPaths
+34:> Task :app:checkDebugAarMetadata
+35:> Task :app:compileDebugNavigationResources
+36:> Task :app:createDebugCompatibleScreenManifests
+37:> Task :app:extractDeepLinksDebug
+38:> Task :app:checkDebugDuplicateClasses
+55:> Task :app:kspDebugKotlin
+56:> Task :app:mergeDebugResources
+57:> Task :app:processDebugMainManifest
+58:> Task :app:mergeExtDexDebug
+59:> Task :app:processDebugManifest
+60:> Task :app:processDebugManifestForPackage
+61:> Task :app:compileDebugKotlin
+62:> Task :app:mergeLibDexDebug
+63:> Task :app:processDebugResources
+64:> Task :app:validateSigningDebug
+65:> Task :app:writeDebugAppMetadata
+66:> Task :app:writeDebugSigningConfigVersions
+67:> Task :app:mergeDebugJniLibFolders
+68:> Task :app:mergeDebugNativeLibs
+70:> Task :app:stripDebugDebugSymbols
+73:> Task :app:compileDebugKotlin
+100:> Task :app:processDebugJavaRes
+101:> Task :app:mergeDebugJavaResource
+102:> Task :app:compileDebugJavaWithJavac
+103:> Task :app:dexBuilderDebug
+104:> Task :app:mergeProjectDexDebug
+105:> Task :app:packageDebug
+106:> Task :app:assembleDebug
+107:> Task :app:createDebugApkListingFileRedirect
