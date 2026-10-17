@@ -1,5 +1,10 @@
 package com.example.goldlux.ui.components
 
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.graphics.BlendMode
+import androidx.compose.ui.graphics.CompositingStrategy
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.draw.drawWithContent
 import com.example.ui.theme.LuxDisplay
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Animatable
@@ -213,91 +218,59 @@ fun LogoMotionSplash(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // Animated Royal Gold Emblem
+            // Animated official logo: fade + scale in, soft breathing glow, gold shimmer sweep
             Box(
                 modifier = Modifier
-                    .size(220.dp)
-                    .scale(scale.value * pulseScale)
+                    .size(width = 260.dp, height = 290.dp)
+                    .scale(scale.value * (1f + (pulseScale - 1f) * 0.35f))
                     .alpha(alpha.value),
                 contentAlignment = Alignment.Center
             ) {
-                // Outer Orbiting Ornamental Ring
+                // breathing golden glow behind the logo
                 Canvas(modifier = Modifier.fillMaxSize()) {
-                    val radius = size.minDimension / 2f - 12f
-                    val center = Offset(size.width / 2f, size.height / 2f)
-
-                    // Rotating dashed gold ring
-                    rotate(orbitAngle) {
-                        drawCircle(
-                            brush = Brush.sweepGradient(
-                                listOf(
-                                    Color(0xFFD4AF37),
-                                    Color(0xFFFFF3C4),
-                                    Color(0xFF9E7600),
-                                    Color(0xFFD4AF37)
-                                )
-                            ),
-                            radius = radius,
-                            center = center,
-                            style = Stroke(
-                                width = 2.2f,
-                                cap = StrokeCap.Round
-                            )
-                        )
-                        // 8 ornamental nodes on ring
-                        for (i in 0 until 8) {
-                            val rad = Math.toRadians((i * 45).toDouble())
-                            val nx = center.x + (radius * cos(rad)).toFloat()
-                            val ny = center.y + (radius * sin(rad)).toFloat()
-                            drawCircle(
-                                color = if (i % 2 == 0) GoldLight else GoldPrimary,
-                                radius = if (i % 2 == 0) 4.5f else 3f,
-                                center = Offset(nx, ny)
-                            )
-                        }
-                    }
-
-                    // Counter-rotating inner orbit ring
-                    rotate(counterAngle) {
-                        drawCircle(
-                            color = GoldBorder.copy(alpha = 0.6f),
-                            radius = radius - 16f,
-                            center = center,
-                            style = Stroke(
-                                width = 1.2f,
-                                cap = StrokeCap.Round
-                            )
-                        )
-                    }
-                }
-
-                // Inner Glow Backdrop
-                Box(
-                    modifier = Modifier
-                        .size(150.dp)
-                        .clip(CircleShape)
-                        .background(
-                            Brush.radialGradient(
-                                listOf(
-                                    Color(0x55D4AF37),
-                                    Color(0x221D1A2A),
-                                    Color.Transparent
-                                )
-                            )
-                        )
-                        .border(1.2.dp, GoldBorder, CircleShape),
-                    contentAlignment = Alignment.Center
-                ) {
-                    // Center Sane' Al-Ahlam Official Logo Graphic
-                    Image(
-                        painter = painterResource(id = R.drawable.ic_sane_al_ahlam_logo),
-                        contentDescription = "صانع الأحلام",
-                        modifier = Modifier.size(130.dp)
+                    val c = Offset(size.width / 2f, size.height / 2f)
+                    val r = size.minDimension * 0.55f * pulseScale
+                    drawCircle(
+                        brush = Brush.radialGradient(
+                            colors = listOf(Color(0x55D4AF37), Color(0x18D4AF37), Color.Transparent),
+                            center = c,
+                            radius = r
+                        ),
+                        radius = r,
+                        center = c
                     )
                 }
+
+                Image(
+                    painter = painterResource(id = R.drawable.logo_dream_maker),
+                    contentDescription = "صانع الأحلام",
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(10.dp)
+                        .graphicsLayer { compositingStrategy = CompositingStrategy.Offscreen }
+                        .drawWithContent {
+                            drawContent()
+                            // diagonal light sweep that only paints over the logo pixels
+                            val progress = ((shimmerOffset + 200f) / 800f).coerceIn(0f, 1f)
+                            val x = -size.width * 0.6f + progress * size.width * 2.2f
+                            drawRect(
+                                brush = Brush.linearGradient(
+                                    colors = listOf(
+                                        Color.Transparent,
+                                        Color(0xAAFFF6D8),
+                                        Color.Transparent
+                                    ),
+                                    start = Offset(x - size.width * 0.25f, 0f),
+                                    end = Offset(x + size.width * 0.25f, size.height)
+                                ),
+                                blendMode = BlendMode.SrcAtop
+                            )
+                        }
+                )
             }
 
-            Spacer(modifier = Modifier.height(28.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             // Brand Typography: صانع الأحلام
             AnimatedVisibility(
@@ -308,18 +281,6 @@ fun LogoMotionSplash(
                 )
             ) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(
-                        text = "صانع الأحلام",
-                        color = TextWhite,
-                        fontSize = 38.sp,
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = LuxDisplay,
-                        letterSpacing = 0.sp,
-                        textAlign = TextAlign.Center
-                    )
-
-                    Spacer(modifier = Modifier.height(6.dp))
-
                     Text(
                         text = "JEWELRY DREAM MAKER • KUWAIT",
                         color = GoldLight,

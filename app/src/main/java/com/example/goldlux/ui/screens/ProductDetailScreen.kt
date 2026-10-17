@@ -140,7 +140,7 @@ fun ProductDetailScreen(
             )
         },
         bottomBar = {
-            // Bottom Action Bar: تماس در واتساپ + Direct Call Icon (+965 9943 4920)
+            // Bottom Action Bar: WhatsApp order + Direct Call Icon (+965 9943 4920)
                 Surface(
                     color = DarkSurface,
                     border = androidx.compose.foundation.BorderStroke(1.dp, GoldBorder),
@@ -176,7 +176,7 @@ fun ProductDetailScreen(
 
                     Spacer(modifier = Modifier.width(12.dp))
 
-                    // 2. WhatsApp Direct Order Button: تماس در واتساپ
+                    // 2. WhatsApp Direct Order Button
                     Surface(
                         shape = RoundedCornerShape(14.dp),
                         color = Color.Transparent,
@@ -219,7 +219,7 @@ fun ProductDetailScreen(
                             Spacer(modifier = Modifier.width(10.dp))
                             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                                 Text(
-                                    text = if (isArabic) "تماس در واتساپ" else "Contact on WhatsApp",
+                                    text = if (isArabic) "اطلب عبر واتساب" else "Order on WhatsApp",
                                     color = Color.White,
                                     fontSize = 15.sp,
                                     fontWeight = FontWeight.Bold
@@ -312,6 +312,21 @@ fun ProductDetailScreen(
                             color = TextSilver,
                             fontSize = 12.sp,
                             fontWeight = FontWeight.Medium
+                        )
+                    }
+
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(DarkSurfaceVariant)
+                            .border(0.8.dp, GoldBorder, RoundedCornerShape(8.dp))
+                            .padding(horizontal = 10.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = "${if (isArabic) "الكود" else "Code"}: ${product.displayCode}",
+                            color = GoldLight,
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.SemiBold
                         )
                     }
                 }

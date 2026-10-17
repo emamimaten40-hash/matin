@@ -96,7 +96,8 @@ fun ShopScreen(
                 product.nameEn.contains(uiState.searchQuery, ignoreCase = true) ||
                 product.nameAr.contains(uiState.searchQuery, ignoreCase = true) ||
                 product.descriptionEn.contains(uiState.searchQuery, ignoreCase = true) ||
-                product.descriptionAr.contains(uiState.searchQuery, ignoreCase = true)
+                product.descriptionAr.contains(uiState.searchQuery, ignoreCase = true) ||
+                product.displayCode.contains(uiState.searchQuery.trim(), ignoreCase = true)
         matchesCategory && matchesKarat && matchesQuery
     }
 
@@ -395,7 +396,7 @@ fun ProductGridCard(
                             .padding(horizontal = 6.dp, vertical = 2.dp)
                     ) {
                         Text(
-                            text = "${if (isArabic) product.karat.nameAr else product.karat.nameEn} • ${Localization.formatWeight(product.weightInGrams, isArabic)}",
+                            text = "${product.displayCode} • ${if (isArabic) product.karat.nameAr else product.karat.nameEn}",
                             color = GoldLight,
                             fontSize = 10.sp,
                             fontWeight = FontWeight.Bold

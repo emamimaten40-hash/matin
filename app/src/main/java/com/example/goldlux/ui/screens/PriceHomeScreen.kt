@@ -203,7 +203,7 @@ fun PriceHomeScreen(
                         contentAlignment = Alignment.Center
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.ic_sane_al_ahlam_logo),
+                            painter = painterResource(id = R.drawable.logo_dream_maker),
                             contentDescription = "صانع الأحلام",
                             modifier = Modifier.size(32.dp)
                         )
@@ -299,10 +299,10 @@ fun PriceHomeScreen(
                         Spacer(modifier = Modifier.width(6.dp))
                         Text(
                             text = when {
-                                isArabic && snapshot?.isOffline == true -> "بورصة الكويت • تحديث كل ١٠ ثوانٍ"
-                                isArabic -> "بورصة الكويت للذهب • تحديث مباشر كل ١٠ ثوانٍ"
-                                snapshot?.isOffline == true -> "Kuwait Exchange • every 10s"
-                                else -> "Kuwait Gold Exchange • live every 10s"
+                                isArabic && snapshot?.isOffline == true -> "دار السبائك • آخر سعر متاح"
+                                isArabic -> "أسعار دار السبائك • تحديث مباشر كل ١٥ ثانية"
+                                snapshot?.isOffline == true -> "Dar Al Sabaek • last known price"
+                                else -> "Dar Al Sabaek • live every 15s"
                             },
                             color = if (snapshot?.isOffline == true) Color(0xFFE67E22) else PriceUpGreen,
                             fontSize = 11.sp,

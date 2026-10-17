@@ -10,6 +10,7 @@ class ProductRepository {
         return listOf(
             Product(
                 id = "p1_royal_ring",
+                code = "DM-1001",
                 nameEn = "Royal Solitaire Sovereign Ring",
                 nameAr = "خاتم السوليتير الملكي الذهبي",
                 descriptionEn = "Handcrafted in certified 21K gold featuring intricate royal filigree engravings and a brilliant centerpiece cut. Hallmarked for everlasting heritage.",
@@ -27,6 +28,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p2_monarch_necklace",
+                code = "DM-1002",
                 nameEn = "Monarch Arabesque Gold Choker",
                 nameAr = "عقد المونارك الأرابيسك الفاخر",
                 descriptionEn = "Exquisite 22K pure yellow gold choker inspired by Andalusian arabesque palace architecture with cascading golden droplets.",
@@ -44,6 +46,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p3_heritage_bangles",
+                code = "DM-1003",
                 nameEn = "Heritage Dubai Floral Bangle",
                 nameAr = "سوار دبي التراثي المنقوش",
                 descriptionEn = "Solid 21K traditional gold bangle with double safety clasp and laser-precision geometric patterns reminiscent of Arabian heritage.",
@@ -61,6 +64,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p4_celestial_earrings",
+                code = "DM-1004",
                 nameEn = "Celestial Crescent Gold Earrings",
                 nameAr = "أقراط الهلال السماوي الذهبية",
                 descriptionEn = "Dainty and graceful 18K polished gold drop earrings featuring a glowing celestial crescent motif with delicate dangling chains.",
@@ -78,6 +82,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p5_sultan_bridal_set",
+                code = "DM-1005",
                 nameEn = "Sultan Bridal 4-Piece Grand Set",
                 nameAr = "طقم العروس السلطاني الملكي (٤ قطع)",
                 descriptionEn = "A magnificent bridal ensemble including royal choker necklace, matching chandelier earrings, cuff bracelet, and majestic ring in 21K gold.",
@@ -95,6 +100,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p6_valcambi_bar_20g",
+                code = "DM-1006",
                 nameEn = "Swiss 20g 24K Fine Gold Bar",
                 nameAr = "سبيكة سويسرية ٢٠ غرام عيار ٢٤",
                 descriptionEn = "Pure 999.9 fine gold investment ingot sealed in a tamper-evident serial-numbered security assay card.",
@@ -111,6 +117,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p7_infinity_eternity_ring",
+                code = "DM-1007",
                 nameEn = "Infinity Wave Gold Band",
                 nameAr = "محبس تموج اللانهاية الذهبي",
                 descriptionEn = "Modern undulating silhouette in satin and mirror-finish 18K gold. Designed for comfortable daily luxury wear.",
@@ -127,6 +134,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p8_palm_oasis_pendant",
+                code = "DM-1008",
                 nameEn = "Palm Oasis 21K Gold Pendant",
                 nameAr = "قلادة واحة النخيل الذهبية عيار ٢١",
                 descriptionEn = "Iconic Arabian date palm pendant crafted in warm 21K yellow gold with a sparkling diamond-cut textured trunk and delicate fronds.",
@@ -143,6 +151,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p9_tassel_chandelier_earrings",
+                code = "DM-1009",
                 nameEn = "Royal Tassel Cascade Earrings",
                 nameAr = "أقراط الشراشيب الملكية الفاخرة",
                 descriptionEn = "Statement evening chandeliers in 21K gold featuring micro-mesh golden tassels that flow with graceful luminescence.",
@@ -159,6 +168,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p10_tennis_link_bracelet",
+                code = "DM-1010",
                 nameEn = "Golden Riviera Tennis Bracelet",
                 nameAr = "إسوارة الريفيرا الذهبية اللامعة",
                 descriptionEn = "Classic tennis link bracelet articulated in rich 18K yellow gold with seamless flex-joints and security latch.",
@@ -175,6 +185,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p11_pamp_bar_50g",
+                code = "DM-1011",
                 nameEn = "PAMP Suisse 50g Fortuna 24K Bar",
                 nameAr = "سبيكة بامب فورتونا ٥٠ غرام عيار ٢٤",
                 descriptionEn = "Internationally celebrated Lady Fortuna 50g bullion bar in 999.9 purity, individually serialized with official Swiss hallmark.",
@@ -191,6 +202,7 @@ class ProductRepository {
             ),
             Product(
                 id = "p12_sovereign_ring_men",
+                code = "DM-1012",
                 nameEn = "Emir Signet Gold Ring",
                 nameAr = "خاتم الأمير المنقوش للرجال",
                 descriptionEn = "Heavyweight masculine signet ring in solid 18K yellow gold with hand-chiseled brushed satin bezel.",

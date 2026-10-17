@@ -23,8 +23,14 @@ data class Product(
     val imageUrls: List<String>,
     val isFeatured: Boolean = false,
     val certificateNo: String = "GIA-SA-98241",
-    val hallmarked: Boolean = true
+    val hallmarked: Boolean = true,
+    /** Product code shown in the app and sent in WhatsApp orders (e.g. DM-1001) */
+    val code: String = ""
 ) {
+    /** Always returns a code: the assigned one, or a stable one derived from the id. */
+    val displayCode: String
+        get() = code.ifBlank { "DM-" + (1000 + (id.hashCode() and 0x7fffffff) % 9000) }
+
     /**
      * Calculates the raw gold value based on current 24K price per gram
      */

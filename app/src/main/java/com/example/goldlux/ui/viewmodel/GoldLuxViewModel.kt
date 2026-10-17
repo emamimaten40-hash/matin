@@ -147,7 +147,7 @@ class GoldLuxViewModel(
     private fun startPeriodicPriceTicker() {
         viewModelScope.launch {
             while (isActive) {
-                delay(10_000) // update every 10 seconds per user specification!
+                delay(15_000) // Dar Al Sabaek feed refreshes every 15 seconds
                 val currentSnapshot = _uiState.value.liveSnapshot
                 if (currentSnapshot != null) {
                     val refreshed = priceRepo.getLiveGoldPrices(forceRefresh = true)
@@ -462,7 +462,10 @@ class GoldLuxViewModel(
 
     fun addNewProduct(product: Product) {
         _uiState.update { state ->
-            state.copy(products = listOf(product) + state.products)
+            // give every new item the next free code: DM-1013, DM-1014 ...
+            val nextNumber = (state.products.mapNotNull { it.code.removePrefix("DM-").toIntOrNull() }.maxOrNull() ?: 1000) + 1
+            val withCode = if (product.code.isBlank()) product.copy(code = "DM-$nextNumber") else product
+            state.copy(products = listOf(withCode) + state.products)
         }
     }
 

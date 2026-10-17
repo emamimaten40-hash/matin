@@ -255,7 +255,7 @@ fun ProfileScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Customer Orders & Purchases Section (سفارش‌ها و خریدهای مشتری)
+        // Customer Orders & Purchases Section 
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -688,7 +688,7 @@ fun ProfileScreen(
             Spacer(modifier = Modifier.height(24.dp))
         }
 
-        // Market Data & Chart Reality Card (Answering: نمودار واقعیه؟)
+        // Market Data & Chart Reality Card 
         GoldCard(
             modifier = Modifier.fillMaxWidth(),
             backgroundColor = DarkSurface,

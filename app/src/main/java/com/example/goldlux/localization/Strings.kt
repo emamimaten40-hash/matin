@@ -50,7 +50,7 @@ object Strings {
     fun barPuritySubtitle(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "عيار ٢٤ نقاء ٩٩٩٫٩ سبيكة استثمارية فاخرة" else "24K 999.9 Fine Investment Ingot"
 
     // Shop Screen
-    fun searchPlaceholder(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "ابحث عن خواتم، قلائد، أساور ذهبية..." else "Search rings, necklaces, bracelets..."
+    fun searchPlaceholder(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "ابحث بالاسم أو كود القطعة (DM-1001)..." else "Search by name or item code (DM-1001)..."
     fun allCategories(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "الكل" else "All"
     fun filterKarat(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "تصفية حسب العيار:" else "Filter by Karat:"
     fun itemsFound(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "قطعة مجوهرات متوفرة" else "jewelry pieces found"
@@ -163,16 +163,16 @@ object Strings {
     fun noOrdersYet(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "لا توجد طلبات جديدة حالياً" else "No orders recorded yet"
     fun chartRealityHeader(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "هل المخطط والأسعار حقيقية؟" else "Is the Chart & Pricing Real?"
     fun chartRealityExplanation(lang: AppLanguage) = if (lang == AppLanguage.ARABIC)
-        "نعم! الأسعار مربوطة مباشرة بمؤشر الذهب العالمي (LBMA Spot) وبورصة تداول الذهب في الكويت. يتم تحديث سعر غرام عيار ٢٤ بدقة متناهية كل ١٠ ثوانٍ واحتساب باقي العيارات وفق نسب النقاء المعتمدة (٢٢ = ٩١٫٦٪ ، ٢١ = ٨٧٫٥٪ ، ١٨ = ٧٥٪) مع تسعير متزامن بالدينار الكويتي (د.ك)، الدولار ($) والدرهم الإماراتي (د.إ)."
+        "أسعار الشراء والبيع لعيارات ٢٤ و٢٢ و٢١ و١٨ تُجلب مباشرة من دار السبائك (daralsabaek.com) وتتحدث كل ١٥ ثانية بالدينار الكويتي، وتُحوَّل إلى الدولار والدرهم. مخطط اليوم (١ يوم) يعرض الأسعار الحقيقية المسجلة منذ فتح التطبيق، أما المخططات الأطول فهي تقديرية للعرض فقط."
     else
-        "Yes! Prices are directly synchronized with Kuwait Gold Exchange and global LBMA spot gold. 24K, 22K, 21K, and 18K rates reflect live Kuwait market trading updated every 10 seconds in Kuwaiti Dinar (KWD), US Dollar (USD), and UAE Dirham (AED)."
+        "Buy and sell prices for 24K, 22K, 21K and 18K are pulled directly from Dar Al Sabaek (daralsabaek.com) every 15 seconds in Kuwaiti Dinar, then converted to USD and AED. The 1D chart shows the real prices recorded since the app was opened; longer timeframes are illustrative estimates only."
     fun liveApiSourceLabel(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "مصدر البيانات المباشر:" else "Live Market Data Provider:"
     fun apiKeyPlaceholder(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "أدخل مفتاح API (اختياري للربط المخصص)..." else "Enter API Key (optional custom feed)..."
     fun testConnection(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "اختبار الاتصال بالسوق" else "Test Market Connection"
 
     // 10s Live Updates & Admin Authentication Isolation
-    fun live10sSync(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "تحديث مباشر كل ١٠ ثوانٍ" else "Live 10s Price Update"
-    fun live10sChart(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "مخطط لحظي يتحدث كل ١٠ ثوانٍ" else "Real-time 10s Chart Sync"
+    fun live10sSync(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "تحديث مباشر كل ١٥ ثانية" else "Live 15s Price Update"
+    fun live10sChart(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "مخطط لحظي يتحدث كل ١٥ ثانية" else "Real-time 15s Chart Sync"
     fun adminLoginTitle(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "تسجيل دخول إدارة صانع الأحلام" else "Dream Maker Admin Access"
     fun adminLoginDesc(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "أدخل رمز المرور السري الخاص بإدارة المتجر للوصول للوحة التحكم:" else "Enter the master PIN to access the boutique management portal:"
     fun adminPinPlaceholder(lang: AppLanguage) = if (lang == AppLanguage.ARABIC) "رمز المرور (الافتراضي: 8888)" else "Admin PIN (Default: 8888)"

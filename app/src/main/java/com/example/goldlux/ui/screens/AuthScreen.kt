@@ -89,7 +89,7 @@ import com.example.ui.theme.TextWhite
 
 /**
  * Authentication screen requested by the user:
- * Entry with Phone Number, Password, and Confirm Password (شماره و رمز و تایید رمز).
+ * Sign in: phone + password. Register: phone + password + confirm password.
  * Distinct Admin account (+96599434920 / 8888) with dedicated Management Panel,
  * while regular client accounts enjoy personalized VIP catalog without admin controls.
  */
@@ -148,7 +148,7 @@ fun AuthScreen(
             contentAlignment = Alignment.Center
         ) {
             Image(
-                painter = painterResource(id = R.drawable.ic_sane_al_ahlam_logo),
+                painter = painterResource(id = R.drawable.logo_dream_maker),
                 contentDescription = "صانع الأحلام",
                 modifier = Modifier.size(72.dp)
             )
@@ -202,7 +202,7 @@ fun AuthScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        text = if (isArabic) "ورود به حساب" else "Sign In",
+                        text = if (isArabic) "تسجيل الدخول" else "Sign In",
                         color = if (!isRegisterMode) Color(0xFF0E0E13) else TextSilver,
                         fontSize = 13.sp,
                         fontWeight = FontWeight.Bold
@@ -223,7 +223,7 @@ fun AuthScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        text = if (isArabic) "ثبت‌نام جدید" else "Register",
+                        text = if (isArabic) "حساب جديد" else "Register",
                         color = if (isRegisterMode) Color(0xFF0E0E13) else TextSilver,
                         fontSize = 13.sp,
                         fontWeight = FontWeight.Bold
@@ -242,9 +242,9 @@ fun AuthScreen(
             borderWidth = 0.8.dp
         ) {
             Column(modifier = Modifier.padding(18.dp)) {
-                // 1. Phone Number Field (شماره)
+                // 1. Phone Number Field
                 Text(
-                    text = if (isArabic) "شماره تلفن / موبایل" else "Phone Number",
+                    text = if (isArabic) "رقم الهاتف" else "Phone Number",
                     color = GoldLight,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.SemiBold
@@ -258,7 +258,7 @@ fun AuthScreen(
                     },
                     placeholder = {
                         Text(
-                            text = if (isArabic) "+965 9943 4920 یا شماره همراه" else "+965 9943 4920",
+                            text = if (isArabic) "مثال: 9943 4920 965+" else "e.g. +965 9943 4920",
                             color = TextMuted,
                             fontSize = 13.sp
                         )
@@ -290,9 +290,9 @@ fun AuthScreen(
 
                 Spacer(modifier = Modifier.height(14.dp))
 
-                // 2. Password Field (رمز)
+                // 2. Password Field
                 Text(
-                    text = if (isArabic) "رمز عبور" else "Password",
+                    text = if (isArabic) "كلمة المرور" else "Password",
                     color = GoldLight,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.SemiBold
@@ -306,7 +306,7 @@ fun AuthScreen(
                     },
                     placeholder = {
                         Text(
-                            text = if (isArabic) "حداقل ۴ کاراکتر" else "Min 4 characters",
+                            text = if (isArabic) "٤ خانات على الأقل" else "Min 4 characters",
                             color = TextMuted,
                             fontSize = 13.sp
                         )
@@ -333,7 +333,21 @@ fun AuthScreen(
                     visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Password,
-                        imeAction = ImeAction.Next
+                        imeAction = if (isRegisterMode) ImeAction.Next else ImeAction.Done
+                    ),
+                    keyboardActions = KeyboardActions(
+                        onDone = {
+                            performAuth(
+                                viewModel = viewModel,
+                                phone = phoneInput,
+                                pass = passwordInput,
+                                confirmPass = confirmPasswordInput,
+                                isRegister = isRegisterMode,
+                                isArabic = isArabic,
+                                onError = { localError = it },
+                                onSuccess = onSuccess
+                            )
+                        }
                     ),
                     shape = RoundedCornerShape(12.dp),
                     colors = TextFieldDefaults.colors(
@@ -347,11 +361,12 @@ fun AuthScreen(
                     modifier = Modifier.fillMaxWidth()
                 )
 
+                // 3. Confirm Password Field - only when creating a new account
+                if (isRegisterMode) {
                 Spacer(modifier = Modifier.height(14.dp))
 
-                // 3. Confirm Password Field (تأیید رمز) - Required per user specification
                 Text(
-                    text = if (isArabic) "تأیید رمز عبور" else "Confirm Password",
+                    text = if (isArabic) "تأكيد كلمة المرور" else "Confirm Password",
                     color = GoldLight,
                     fontSize = 12.sp,
                     fontWeight = FontWeight.SemiBold
@@ -365,7 +380,7 @@ fun AuthScreen(
                     },
                     placeholder = {
                         Text(
-                            text = if (isArabic) "تکرار دقیق رمز عبور" else "Re-enter password",
+                            text = if (isArabic) "أعد إدخال كلمة المرور" else "Re-enter password",
                             color = TextMuted,
                             fontSize = 13.sp
                         )
@@ -419,6 +434,7 @@ fun AuthScreen(
                     ),
                     modifier = Modifier.fillMaxWidth()
                 )
+                }
 
                 // Error Message Display
                 if (!displayError.isNullOrBlank()) {
@@ -436,9 +452,9 @@ fun AuthScreen(
                 // Submit Button
                 GoldGradientButton(
                     text = if (isRegisterMode) {
-                        if (isArabic) "ثبت‌نام و ورود به صانع الأحلام" else "Register & Enter Boutique"
+                        if (isArabic) "إنشاء الحساب والدخول" else "Create Account & Enter"
                     } else {
-                        if (isArabic) "ورود به صانع الأحلام" else "Sign In to Boutique"
+                        if (isArabic) "دخول" else "Sign In"
                     },
                     onClick = {
                         performAuth(
@@ -460,96 +476,10 @@ fun AuthScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Quick Admin & Demo VIP Shortcuts
-        Text(
-            text = if (isArabic) "حساب‌های پیش‌فرض جهت تست و بازبینی:" else "Fast Demo Accounts:",
-            color = TextMuted,
-            fontSize = 12.sp
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            // Admin Quick Fill Button
-            OutlinedButton(
-                onClick = {
-                    phoneInput = "+96599434920"
-                    passwordInput = "8888"
-                    confirmPasswordInput = "8888"
-                    localError = null
-                    val success = viewModel.login(phoneInput, passwordInput, confirmPasswordInput, false)
-                    if (success) {
-                        Toast.makeText(context, if (isArabic) "👑 ورود موفق با دسترسی مدیر ارشد صانع الأحلام" else "Admin account connected", Toast.LENGTH_SHORT).show()
-                        onSuccess()
-                    }
-                },
-                modifier = Modifier
-                    .weight(1f)
-                    .height(42.dp),
-                shape = RoundedCornerShape(12.dp),
-                border = androidx.compose.foundation.BorderStroke(1.dp, GoldPrimary),
-                colors = ButtonDefaults.outlinedButtonColors(containerColor = Color(0x22D4AF37))
-            ) {
-                Icon(
-                    imageVector = Icons.Default.AdminPanelSettings,
-                    contentDescription = null,
-                    tint = GoldLight,
-                    modifier = Modifier.size(16.dp)
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                Text(
-                    text = if (isArabic) "👑 ورود مدیر (Admin)" else "👑 Admin Demo",
-                    color = GoldLight,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.Bold
-                )
-            }
-
-            // VIP Customer Quick Fill Button
-            OutlinedButton(
-                onClick = {
-                    phoneInput = "+96598765432"
-                    passwordInput = "1234"
-                    confirmPasswordInput = "1234"
-                    localError = null
-                    val success = viewModel.login(phoneInput, passwordInput, confirmPasswordInput, false)
-                    if (success) {
-                        Toast.makeText(context, if (isArabic) "💎 ورود به عنوان مشتری VIP" else "VIP Client connected", Toast.LENGTH_SHORT).show()
-                        onSuccess()
-                    }
-                },
-                modifier = Modifier
-                    .weight(1f)
-                    .height(42.dp),
-                shape = RoundedCornerShape(12.dp),
-                border = androidx.compose.foundation.BorderStroke(0.8.dp, GoldBorder),
-                colors = ButtonDefaults.outlinedButtonColors(containerColor = DarkSurfaceVariant)
-            ) {
-                Icon(
-                    imageVector = Icons.Default.Diamond,
-                    contentDescription = null,
-                    tint = TextSilver,
-                    modifier = Modifier.size(16.dp)
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                Text(
-                    text = if (isArabic) "💎 ورود کاربر (Client)" else "💎 Client Demo",
-                    color = TextSilver,
-                    fontSize = 12.sp,
-                    fontWeight = FontWeight.SemiBold
-                )
-            }
-        }
-
-        Spacer(modifier = Modifier.height(14.dp))
-
         // Guest Skip Button
         TextButton(onClick = onSkipGuest) {
             Text(
-                text = if (isArabic) "متابعة كزائر دون تسجيل • Browse as Guest" else "Browse as Guest",
+                text = if (isArabic) "متابعة كزائر دون تسجيل" else "Browse as Guest",
                 color = TextSilver,
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Medium
@@ -569,22 +499,22 @@ private fun performAuth(
     onSuccess: () -> Unit
 ) {
     if (phone.isBlank()) {
-        onError(if (isArabic) "لطفاً شماره تلفن یا موبایل خود را وارد کنید" else "Please enter phone number")
+        onError(if (isArabic) "يرجى إدخال رقم الهاتف" else "Please enter your phone number")
         return
     }
     if (pass.length < 4) {
-        onError(if (isArabic) "رمز عبور باید حداقل ۴ رقم باشد" else "Password must be at least 4 digits")
+        onError(if (isArabic) "كلمة المرور يجب أن لا تقل عن ٤ خانات" else "Password must be at least 4 characters")
         return
     }
-    if (pass != confirmPass) {
-        onError(if (isArabic) "تأیید رمز عبور با رمز وارد شده مطابقت ندارد!" else "Passwords do not match!")
+    if (isRegister && pass != confirmPass) {
+        onError(if (isArabic) "كلمتا المرور غير متطابقتين!" else "Passwords do not match!")
         return
     }
 
     val success = viewModel.login(
         phone = phone,
         pass = pass,
-        confirmPass = confirmPass,
+        confirmPass = if (isRegister) confirmPass else null,
         isRegister = isRegister
     )
 

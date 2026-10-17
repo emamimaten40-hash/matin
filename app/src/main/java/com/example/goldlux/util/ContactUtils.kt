@@ -21,10 +21,25 @@ object ContactUtils {
     ) {
         try {
             val message = if (product != null && livePrice != null && currency != null) {
+                val imageLink = product.imageUrls.firstOrNull { it.startsWith("http") }
                 if (isArabic) {
-                    "السلام عليكم، أود الاستفسار عن شراء القطعة:\n*${product.nameAr}*\nالعيار: ${product.karat.nameAr} (الوزن: ${product.weightInGrams} غرام)\nالسعر المباشر: ${Localization.formatPrice(livePrice, currency, true)}\nمن مجوهرات صانع الأحلام الكويت."
+                    buildString {
+                        append("السلام عليكم، أرغب بطلب هذه القطعة من مجوهرات صانع الأحلام:\n\n")
+                        append("كود القطعة: *${product.displayCode}*\n")
+                        append("الاسم: ${product.nameAr}\n")
+                        append("العيار: ${product.karat.nameAr} • الوزن: ${Localization.formatWeight(product.weightInGrams, true)}\n")
+                        append("السعر الحالي: ${Localization.formatPrice(livePrice, currency, true)}\n")
+                        if (imageLink != null) append("صورة القطعة: $imageLink\n")
+                    }
                 } else {
-                    "Hello, I would like to inquire about purchasing:\n*${product.nameEn}*\nKarat: ${product.karat.nameEn} (Weight: ${product.weightInGrams}g)\nLive Price: ${Localization.formatPrice(livePrice, currency, false)}\nfrom Jewelry Dream Maker Kuwait."
+                    buildString {
+                        append("Hello, I would like to order this piece from Jewelry Dream Maker:\n\n")
+                        append("Item code: *${product.displayCode}*\n")
+                        append("Name: ${product.nameEn}\n")
+                        append("Karat: ${product.karat.nameEn} • Weight: ${Localization.formatWeight(product.weightInGrams, false)}\n")
+                        append("Current price: ${Localization.formatPrice(livePrice, currency, false)}\n")
+                        if (imageLink != null) append("Photo: $imageLink\n")
+                    }
                 }
             } else {
                 if (isArabic) {
@@ -35,7 +50,7 @@ object ContactUtils {
             }
 
             val encodedMsg = Uri.encode(message)
-            val url = "https://api.whatsapp.com/send?phone=$BOUTIQUE_PHONE_RAW&text=$encodedMsg"
+            val url = "https://wa.me/$BOUTIQUE_PHONE_RAW?text=$encodedMsg"
             val intent = Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse(url)
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK
@@ -70,7 +85,7 @@ object ContactUtils {
                 "Hello Jewelry Dream Maker, I would like to track my order #$orderId"
             }
             val encodedMsg = Uri.encode(message)
-            val url = "https://api.whatsapp.com/send?phone=$BOUTIQUE_PHONE_RAW&text=$encodedMsg"
+            val url = "https://wa.me/$BOUTIQUE_PHONE_RAW?text=$encodedMsg"
             val intent = Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse(url)
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK

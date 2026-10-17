@@ -948,7 +948,7 @@ fun AdminApiTab(
             .verticalScroll(rememberScrollState())
             .padding(16.dp)
     ) {
-        // Detailed answer to user's question: "نمودار واقعیه؟"
+        // Detailed answer to user's question
         GoldCard(
             modifier = Modifier.fillMaxWidth(),
             backgroundColor = DarkSurface,

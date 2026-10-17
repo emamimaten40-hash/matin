@@ -283,7 +283,7 @@ fun WhatsAppHubScreen(
             OrderTopicCard(
                 icon = Icons.Default.SupportAgent,
                 title = if (isArabic) "استشارة أسعار الذهب الفورية" else "Live Gold Price Advisory",
-                subtitle = if (isArabic) "تحديث دقيق لأسعار البيع والشراء كل ١٠ ثوانٍ" else "Accurate Kuwait market buy & sell updates",
+                subtitle = if (isArabic) "تحديث دقيق لأسعار البيع والشراء كل ١٥ ثانية" else "Accurate Kuwait market buy & sell updates",
                 onClick = {
                     ContactUtils.openWhatsApp(context, isArabic = isArabic)
                 }
