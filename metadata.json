@@ -1,0 +1,6 @@
+{
+  "name": "صانع الأحلام",
+  "description": "مجوهرات صانع الأحلام - أسعار الذهب المباشرة والتسوق الفاخر عبر واتساب",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Ambient Luxury Gold Center Glow -->
+    <path
+        android:pathData="M54,54m-38,0a38,38 0 1,0 76,0a38,38 0 1,0 -76,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="54"
+                android:centerY="52"
+                android:gradientRadius="36"
+                android:type="radial">
+                <item android:offset="0.0" android:color="#40D4AF37" />
+                <item android:offset="0.6" android:color="#12D4AF37" />
+                <item android:offset="1.0" android:color="#00000000" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Top Brilliant Diamond Crown (Accent on letter Sad) -->
+    <!-- Diamond Top Crown Facet -->
+    <path
+        android:pathData="M63,22 L67,18 L59,18 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="59"
+                android:startY="18"
+                android:endX="67"
+                android:endY="22"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFFDE0" />
+                <item android:offset="1.0" android:color="#F7D369" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Diamond Left Facet -->
+    <path
+        android:pathData="M55,18 L59,18 L63,22 L53,22 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="53"
+                android:startY="18"
+                android:endX="63"
+                android:endY="22"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FBE68A" />
+                <item android:offset="1.0" android:color="#D4AF37" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Diamond Right Facet -->
+    <path
+        android:pathData="M67,18 L71,18 L73,22 L63,22 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="63"
+                android:startY="18"
+                android:endX="73"
+                android:endY="22"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#F7D369" />
+                <item android:offset="1.0" android:color="#B38600" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Diamond Bottom Pavilion -->
+    <path
+        android:pathData="M53,22 L73,22 L63,33 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="53"
+                android:startY="22"
+                android:endX="73"
+                android:endY="33"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFF8D6" />
+                <item android:offset="0.4" android:color="#D4AF37" />
+                <item android:offset="1.0" android:color="#7A5A00" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Sparkle Accent at Top Right of Diamond -->
+    <path
+        android:pathData="M71,15 L72,17 L74,18 L72,19 L71,21 L70,19 L68,18 L70,17 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- 3D Gold Arabic Calligraphy: "صانع الأحلام" -->
+
+    <!-- Loop of Sad (ص) -->
+    <path
+        android:pathData="M67,29 C74,32 80,38 79,48 C78,57 70,63 60,62 C52,61 48,54 53,47 C57,41 62,37 67,29 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="48"
+                android:startY="29"
+                android:endX="80"
+                android:endY="63"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFF6CC" />
+                <item android:offset="0.3" android:color="#F5D76E" />
+                <item android:offset="0.7" android:color="#D4AF37" />
+                <item android:offset="1.0" android:color="#8A6700" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Cutout inside Sad -->
+    <path
+        android:pathData="M65,40 C69,41 72,45 71,49 C70,53 65,55 61,54 C58,53 56,49 59,46 C60,42 63,40 65,40 Z"
+        android:fillColor="#FFFFFF" />
+
+    <!-- Tooth of Sad and Vertical Rising Column -->
+    <path
+        android:pathData="M59,37 C58,31 55,26 50,27 C46,28 45,33 46,39 C47,45 49,51 52,57 L47,57 C43,50 40,43 41,35 C42,26 48,22 55,23 C60,24 63,29 62,35 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="40"
+                android:startY="22"
+                android:endX="63"
+                android:endY="57"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFF8D6" />
+                <item android:offset="0.5" android:color="#E5BE38" />
+                <item android:offset="1.0" android:color="#9E7600" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Left Ascending Swoop (Alif / Lam) -->
+    <path
+        android:pathData="M31,19 C28,35 31,52 37,67 C42,80 49,91 56,100 L50,101 C43,90 35,78 30,64 C25,50 23,34 26,19 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="23"
+                android:startY="19"
+                android:endX="56"
+                android:endY="101"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFFBEB" />
+                <item android:offset="0.3" android:color="#F5D76E" />
+                <item android:offset="0.7" android:color="#D4AF37" />
+                <item android:offset="1.0" android:color="#6B5000" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Center Flowing Ribbon Strokes (Ha and Lam) -->
+    <path
+        android:pathData="M39,43 C43,51 49,63 55,75 C60,85 64,94 65,101 L59,101 C57,93 53,84 48,74 C43,63 38,52 34,44 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="34"
+                android:startY="43"
+                android:endX="65"
+                android:endY="101"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FDE68A" />
+                <item android:offset="0.5" android:color="#D4AF37" />
+                <item android:offset="1.0" android:color="#8A6700" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Right Flowing Ribbon Stroke (Mim Base) -->
+    <path
+        android:pathData="M61,60 C65,68 69,78 70,88 C71,95 71,98 71,101 L65,101 C65,97 64,91 63,85 C61,76 57,67 55,60 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="55"
+                android:startY="60"
+                android:endX="71"
+                android:endY="101"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFF1B8" />
+                <item android:offset="0.5" android:color="#D4AF37" />
+                <item android:offset="1.0" android:color="#7A5A00" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Left Tail of Mim -->
+    <path
+        android:pathData="M27,75 C31,79 36,83 37,89 C38,95 34,98 29,97 C25,96 24,91 25,87 C26,82 26,78 27,75 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="24"
+                android:startY="75"
+                android:endX="38"
+                android:endY="98"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#F5D76E" />
+                <item android:offset="1.0" android:color="#9E7600" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Diacritical Marks -->
+    <path
+        android:pathData="M33,37 L37,35 L36,33 L32,34 Z"
+        android:fillColor="#F5D76E" />
+
+    <!-- Subtitle: مجوهرات صانع الأحلام -->
+    <path
+        android:pathData="M38,89 C46,88 62,88 72,89 C73,90 72,90.8 71,90.8 C62,90 46,90 39,90.8 C38,90.8 37,90 38,89 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="37"
+                android:startY="88"
+                android:endX="73"
+                android:endY="90.8"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#F7D369" />
+                <item android:offset="0.5" android:color="#E0B838" />
+                <item android:offset="1.0" android:color="#9E7600" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Subtitle: Jewerlly Dream Maker -->
+    <path
+        android:pathData="M40,93 C47,92.5 61,92.5 70,93 C71,93.8 70,94.2 69,94.2 C61,93.8 47,93.8 41,94.2 C40,94.2 39,93.8 40,93 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="39"
+                android:startY="92.5"
+                android:endX="71"
+                android:endY="94.2"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#D4AF37" />
+                <item android:offset="1.0" android:color="#7E5F00" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>
